@@ -1,10 +1,16 @@
 import { useState } from "react";
+import Languages from "./Languages";
 
 function Keyboard() {
-        const [currentWord, setCurrentWord] = useState('Emmanuel');
+
+
+    const [currentWord, setCurrentWord] = useState('Emmanuel');
+    const [guessedLetters, setGuessedLetters] = useState([]);
+
     const alphabets = "abcdefghijklmnopqrstuvwxyz".split("");
 
-    const [guessedLetters, setGuessedLetters] = useState([]);
+    const wrongLetters = guessedLetters.filter(letter => !currentWord.toLowerCase().includes(letter)).length;
+
     const addGessedLetter = (letter) => {
         if (!guessedLetters.includes(letter)) {
             setGuessedLetters((currentLetters) => [...currentLetters, letter]);
@@ -12,9 +18,11 @@ function Keyboard() {
             alert("You have already guessed this letter!");
         }
     }
-    console.log(guessedLetters);
+    console.log(wrongLetters);
     return (
         <>
+            <Languages wrongLetters={wrongLetters}/>
+
             <div className='w-120 mx-auto flex justify-center gap-2 m-4'>
                 {
                     currentWord.split('').map((letter, index) => (

@@ -1,15 +1,14 @@
-
-import React from 'react'
 import { languages } from '/public/data/languages'
-const Languages = () => {
+const Languages = ({wrongLetters}) => {
+
   return (
     <div className=" w-130 flex flex-wrap justify-center items-center mx-auto gap-4 p-5">
       {languages.map((language, index) => (
         <div
           key={index}
-          className=" p-2 rounded-lg flex items-center justify-center  font-bold"
+          className={`p-2 rounded-md flex items-center justify-center  font-bold`}
           style={{
-            backgroundColor: language.backgroundColor,
+            backgroundColor: wrongLetters>index?"#e5e7eb":language.backgroundColor,
             color: language.color,
           }}
         >

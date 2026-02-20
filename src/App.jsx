@@ -1,7 +1,6 @@
 import './App.css'
 import Header from './components/Header'
 import Result from './components/Result'
-import Languages from './components/Languages'
 import Keyboard from './components/Keyboard'
 
 function App() {
@@ -9,7 +8,6 @@ function App() {
     <div >
       <Header />
       <Result/>
-      <Languages/>
       <Keyboard/>
     </div>
   )
