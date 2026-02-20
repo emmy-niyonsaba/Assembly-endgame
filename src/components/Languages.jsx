@@ -8,7 +8,7 @@ const Languages = ({wrongLetters}) => {
           key={index}
           className={`p-2 rounded-md flex items-center justify-center  font-bold`}
           style={{
-            backgroundColor: wrongLetters>index?"#e5e7eb":language.backgroundColor,
+            backgroundColor: wrongLetters.length >index?"#e5e7eb":language.backgroundColor,
             color: language.color,
           }}
         >

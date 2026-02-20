@@ -1,15 +1,18 @@
 import { useState } from "react";
 import Languages from "./Languages";
+import { languages } from "../../public/data/languages";
+import Result from "./Result";
 
 function Keyboard() {
 
 
     const [currentWord, setCurrentWord] = useState('Emmanuel');
     const [guessedLetters, setGuessedLetters] = useState([]);
-
     const alphabets = "abcdefghijklmnopqrstuvwxyz".split("");
-
-    const wrongLetters = guessedLetters.filter(letter => !currentWord.toLowerCase().includes(letter)).length;
+    const wrongLetters = guessedLetters.filter(letter => !currentWord.toLowerCase().includes(letter));
+    const isGameLost = wrongLetters.length >= languages.length-1;
+    const isGameWon = currentWord.split('').every(letter => guessedLetters.includes(letter.toLowerCase()));
+    const isGameOver = isGameLost || isGameWon;
 
     const addGessedLetter = (letter) => {
         if (!guessedLetters.includes(letter)) {
@@ -21,6 +24,7 @@ function Keyboard() {
     console.log(wrongLetters);
     return (
         <>
+        <Result isGameLost={isGameLost} isGameWon={isGameWon}/>
             <Languages wrongLetters={wrongLetters}/>
 
             <div className='w-120 mx-auto flex justify-center gap-2 m-4'>
@@ -50,7 +54,12 @@ function Keyboard() {
                 })}
 
             </div>
+            {
+                isGameOver && (
             <button className=" bg-blue-400 p-2 rounded-md flex m-5 mx-auto  items-center">New Game</button>
+
+                )
+            }
         </>
 
     )
