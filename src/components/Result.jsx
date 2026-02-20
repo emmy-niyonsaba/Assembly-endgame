@@ -1,7 +1,4 @@
-import { useState } from "react"
 const Result = ({isGameLost, isGameWon}) => {
-
-    const [result, setResult] = useState(false)
   return (
     <div className='flex flex-col gap-5 justify-center items-center p-5'>
         {isGameWon ? <h1 className='text-3xl font-bold text-white bg-green-500 rounded-lg  flex justify-center p-5 '>Congratulations! You saved the programming world from Assembly!</h1> : 

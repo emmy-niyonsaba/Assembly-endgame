@@ -1,0 +1,27 @@
+
+export const  words = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "TypeScript",
+    "Node.js",
+    "Python",
+    "Ruby",
+     "Algorithm",
+  "Framework",
+  "Asynchronous",
+  "Compilation",
+  "Encapsulation",
+  "Microservices",
+  "Authentication",
+  "Virtualization",
+  "Containerization",
+  "Deployment",
+  "Recursion",
+  "Optimization",
+  "Middleware",
+  "Serialization",
+  "Concurrency"
+
+]
