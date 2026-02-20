@@ -1,9 +1,10 @@
-import React from 'react'
 import './App.css'
 import Header from './components/Header'
 import Result from './components/Result'
 import Languages from './components/Languages'
 import WordDisplyer from './components/WordDisplyer'
+import Keyboard from './components/Keyboard'
+
 function App() {
   return (
     <div >
@@ -11,6 +12,7 @@ function App() {
       <Result/>
       <Languages/>
       <WordDisplyer/>
+      <Keyboard/>
     </div>
   )
 }
