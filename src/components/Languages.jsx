@@ -1,20 +1,39 @@
-import { languages } from '/public/data/languages'
-const Languages = ({wrongLetters}) => {
+import { languages } from "/public/data/languages"
 
+const Languages = ({ wrongLetters }) => {
   return (
-    <div className=" w-130 flex flex-wrap justify-center items-center mx-auto gap-4 p-5">
-      {languages.map((language, index) => (
-        <div
-          key={index}
-          className={`p-2 rounded-md flex items-center justify-center  font-bold`}
-          style={{
-            backgroundColor: wrongLetters.length >index?"#e5e7eb":language.backgroundColor,
-            color: language.color,
-          }}
-        >
-          {language.name}
+    <div className="max-w-4xl mx-auto mt-8 px-4">
+      
+      <div className="bg-white shadow-lg rounded-2xl p-6">
+        
+        <h2 className="text-xl font-semibold text-gray-700 text-center mb-6">
+          Programming Languages Status
+        </h2>
+
+        <div className="flex flex-wrap justify-center gap-4">
+          {languages.map((language, index) => {
+            const isEliminated = wrongLetters.length > index
+
+            return (
+              <div
+                key={index}
+                className={`
+                  px-4 py-2 rounded-xl font-semibold text-sm 
+                  transition-all duration-300 shadow-md
+                  ${isEliminated ? "opacity-40 scale-95 line-through" : "hover:scale-105"}
+                `}
+                style={{
+                  backgroundColor: language.backgroundColor,
+                  color: language.color,
+                }}
+              >
+                {language.name}
+              </div>
+            )
+          })}
         </div>
-      ))}
+
+      </div>
     </div>
   )
 }
