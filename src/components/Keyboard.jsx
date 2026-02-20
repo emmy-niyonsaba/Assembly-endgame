@@ -33,6 +33,7 @@ function Keyboard() {
     }
 
     function resetGame() {
+        alert(`The correct word was: ${currentWord.toUpperCase()}. Starting a new game!`)
         setGuessedLetters([])
         const randomWord = words[Math.floor(Math.random() * words.length)]
         setCurrentWord(randomWord)
