@@ -4,7 +4,7 @@ import { languages } from "../../public/data/languages"
 import Result from "./Result"
 import { words } from "/public/data/words"
 
-function Keyboard() {
+function GameSection() {
 
     const [currentWord, setCurrentWord] = useState(
         words[Math.floor(Math.random() * words.length)]
@@ -41,19 +41,12 @@ function Keyboard() {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 flex flex-col items-center justify-center p-6">
-
-            {/* Game Card */}
             <div className="bg-white shadow-2xl rounded-3xl p-8 w-full max-w-3xl">
-
                 <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
                     Word Guessing Game
                 </h1>
-
                 <Result isGameLost={isGameLost} isGameWon={isGameWon} />
-
                 <Languages wrongLetters={wrongLetters} />
-
-                {/* Word Display */}
                 <div className="flex justify-center gap-3 my-8 flex-wrap">
                     {currentWord.split("").map((letter, index) => (
                         <div
@@ -67,16 +60,11 @@ function Keyboard() {
                     ))}
                 </div>
 
-                {/* Keyboard */}
                 <div className="flex flex-wrap justify-center gap-3">
                     {alphabets.map((alphabet) => {
                         const isGuessed = guessedLetters.includes(alphabet)
-                        const isCorrect =
-                            isGuessed &&
-                            currentWord.toLowerCase().includes(alphabet)
-                        const isIncorrect =
-                            isGuessed &&
-                            !currentWord.toLowerCase().includes(alphabet)
+                        const isCorrect =isGuessed &&currentWord.toLowerCase().includes(alphabet)
+                        const isIncorrect = isGuessed &&!currentWord.toLowerCase().includes(alphabet)
 
                         return (
                             <button
@@ -97,7 +85,6 @@ function Keyboard() {
                     })}
                 </div>
 
-                {/* New Game Button */}
                 {isGameOver && (
                     <div className="flex justify-center mt-8">
                         <button
@@ -113,4 +100,4 @@ function Keyboard() {
     )
 }
 
-export default Keyboard
+export default GameSection

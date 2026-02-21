@@ -1,12 +1,12 @@
 import './App.css'
 import Header from './components/Header'
-import Keyboard from './components/Keyboard'
+import GameSection from './components/GameSection'
 
 function App() {
   return (
     <div >
       <Header />
-      <Keyboard/>
+      <GameSection/>
     </div>
   )
 }
