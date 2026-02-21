@@ -22,6 +22,10 @@ export const  words = [
   "Optimization",
   "Middleware",
   "Serialization",
-  "Concurrency"
+  "Concurrency",
+  "Oracle",
+  "LUNIX",
+  "Techno",
+  "England"
 
 ]
