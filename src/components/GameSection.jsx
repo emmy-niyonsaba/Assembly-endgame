@@ -45,7 +45,9 @@ function GameSection() {
                 <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
                     Word Guessing Game
                 </h1>
+                // Display the result of the game  from the Result component
                 <Result isGameLost={isGameLost} isGameWon={isGameWon} />
+                
                 <Languages wrongLetters={wrongLetters} />
                 <div className="flex justify-center gap-3 my-8 flex-wrap">
                     {currentWord.split("").map((letter, index) => (
