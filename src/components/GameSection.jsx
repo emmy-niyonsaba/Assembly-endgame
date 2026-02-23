@@ -27,9 +27,11 @@ function GameSection() {
     function addGuessedLetter(letter) {
         if (isGameOver) return
 
-        if (!guessedLetters.includes(letter)) {
-            setGuessedLetters(prev => [...prev, letter])
-        }
+        guessedLetters.includes(letter)? alert(`You have alread Guesed ${letter}`):setGuessedLetters((prev)=>[...prev,letter])
+        // if (!guessedLetters.includes(letter)) {
+        //     setGuessedLetters(prev => [...prev, letter])
+        // }
+
     }
 
     function resetGame() {
